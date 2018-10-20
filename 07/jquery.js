@@ -57,11 +57,19 @@ var $debug = $('#debug');
 
 $btn.on('click', function(event){
   console.log('click')
-  if($txt.val() === '') {
-    alert('값을 넣어주세요')
-    return;
-  }
+
+  $('h1').hide('slow',function(){ console.log('hide ok!') });
+  $('h1').delay(1000);
+  $('h1').show('fast');
+//   if($txt.val() === '') {
+//     alert('값을 넣어주세요')
+//     return;
+//   }
 
   $debug.html($txt.val());
 
+});
+
+$('.wrap').on('click', 'div', function(event) {
+    $(event.target).fadeOut();
 });
