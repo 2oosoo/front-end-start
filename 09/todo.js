@@ -5,7 +5,7 @@
 var input = document.getElementById('memo');
 var form = document.querySelector('.new-task');
 var list = document.getElementById('list'); //document.querySeletor('#list')
-
+var html = '';
 // debugger; // 코드를 멈추게 함
 
 function addTodo(event) {
@@ -18,12 +18,11 @@ function addTodo(event) {
 }
 
 function insertTodo(todo) {
-    var html = `<li>
+    html = `<li>
     <button class="delete">×</button>
     <input type="checkbox" class="toggle-checked">
     <span class="text">${todo}</span>
     </li>`;
-
     list.innerHTML += html;
 }
 
@@ -40,7 +39,11 @@ function insertTodo(todo) {
 form.addEventListener('submit', addTodo);
 
 // btn 클릭 이벤트 만들어 놓기
-function deleteTodo(list) {
-    var child = list.child;
-    var btn = list.getElementByClassName('')
+function deleteTodo(event) {
+    if(event.target.classList.value === 'delete') {
+        console.log('deleteTodo');
+        event.target.parentNode.remove();
+    }
 }
+
+list.addEventListener('click', deleteTodo);
