@@ -1,0 +1,28 @@
+.box {
+    border: 1px solid black;
+    width: 400px;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+    margin: 10px auto;
+}
+#bug {
+    border: 1px solid black;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+}
+.wrap {
+    width: 400px;
+    margin: 10px auto;
+}
+#life {
+    
+}
+#point {
+    
+}
